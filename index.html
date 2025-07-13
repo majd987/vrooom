@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="script.js" async></script>
+    <style>
+      
+        .slider {
+          position: relative;
+          width: 90%;
+          max-width: 800px;
+          margin: 50px auto;
+          overflow: hidden;
+          border-radius: 15px;
+          box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        .slides {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+          width: 100%;
+        }
+        .slides img {
+          width: 100%;
+          flex-shrink: 0;
+        }
+        .navigation {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          transform: translateY(-50%);
+        }
+        .nav-btn {
+          background-color: rgba(0,0,0,0.5);
+          border: none;
+          color: white;
+          padding: 10px;
+          cursor: pointer;
+          font-size: 18px;
+          border-radius: 50%;
+        }
+        .nav-btn:hover {
+          background-color: rgba(0,0,0,0.7);
+        }
+    </style>
+
+
+</head>
+
+<body>
+  
+    
+    <nav>
+        <h1 class="nav-item " data-active-color="orange" data-target="vrooom">vrooom</h1>
+
+        <a href="#" class="nav-item" data-active-color="blue" data-target="android games">Meilleures offres</a>
+
+        <a href="#" class="nav-item" data-active-color="red" data-target="Blog">compte</a>
+
+        <a href="#" class="nav-item" data-active-color="rebeccapurple" data-target="Contact">Contact</a>
+
+        <span class="nav-indicator"></span>
+      </nav>
+
+      <div class="slider">
+        <div class="slides" id="slides">
+          <img src="file:///C:/Users/MAJD%20BOUDEN/OneDrive/Bureau/zeb/porsche_911_turbo_s_yellow_car_dark_background_4k_5k_hd_cars-1920x1080.jpg" alt="1 ةرﻮﺻ">
+          <img src="file:///C:/Users/MAJD%20BOUDEN/OneDrive/Bureau/zeb/porsche-911-gt3-rs-4000x3000-22867.jpg" alt="2 ةرﻮﺻ">
+          <img src="file:///C:/Users/MAJD%20BOUDEN/OneDrive/Bureau/zeb/ford-mustang-gt-fx-5120x2880-22812.jpg" alt="3 ةرﻮﺻ">
+        </div>
+        <div class="navigation">
+          <button class="nav-btn" onclick="prevSlide()">❮</button>
+          <button class="nav-btn" onclick="nextSlide()">❯</button>
+        </div>
+       </div>
+       <script>
+        const slides = document.getElementById('slides');
+        const totalSlides = slides.children.length;
+        let index = 0;
+        function showSlide(i) {
+          index = (i + totalSlides) % totalSlides;
+          slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        function nextSlide() {
+          showSlide(index + 1);
+        }
+        function prevSlide() {
+          showSlide(index - 1);
+        }
+        setInterval(() => {
+          nextSlide();
+        }, 3000);
+       </script>
+      
+
+ <main>
+    <section class="filter">
+      <input type="text" id="searchInput" placeholder="Search by model..." />
+    </section>
+
+    <section class="car-listings" id="carListings">
+      
+    </section>
+  </main>
+</div>
+ 
+
+
+ 
+
+</body>
+
+
+
+
+</html>

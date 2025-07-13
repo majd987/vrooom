@@ -1,0 +1,147 @@
+/* On fait en sorte que chaque élément contienne sa marge interne avec box-sizing et on retire les traits qui sont par défaut sur les liens */
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  /* On modernise notre balise de navigation avec une petite ombre. On mets tous les éléments du menu les uns bien à côté des autres avec flexbox (display: flex) */
+  nav {
+    background-color: #494949;
+    padding: 0 20px;
+    border-radius: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  /* On stylise chaque élément */
+  .nav-item {
+    color: #ffffff;
+    font-family: arial, sans-serif;
+    padding: 20px;
+    margin: 0 6px;
+    position: relative;
+  }
+  
+  /* Ici on met juste un petit élément avant chaque élément pour le rendre plus beau visuellement */
+  .nav-item:before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    background-color: #dfe2ea;
+    height: 5px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    left: 0;
+    transition: .3s;
+  }
+  
+  /* Avec les dernières nouveautés de CSS, on peut changer les propriétés des éléments selon des conditions avec not */
+  .nav-item:not(.is-active):hover:before {
+    bottom: 0;
+  }
+  .nav-item:not(.is-active):hover {
+    color: #333;
+  }
+  
+  /* Stylisons notre indicateur */
+  .nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    transition: .4s;
+    border-radius: 8px 8px 0 0;
+  }
+body{
+
+background-color: rgb(255, 255, 255);
+}
+#text{
+
+color: #ff0000;
+padding-top: 100px;
+}
+
+#tt{
+  padding-top: 70px;
+  padding-left: unset;
+
+}
+
+
+#rayen {
+    padding-top: 50px;
+    margin: 0 auto;
+    text-align: right;
+    }
+
+    
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.filter {
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+}
+
+.filter input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.car-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.car-card {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.car-card:hover {
+  transform: scale(1.02);
+}
+
+.car-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.car-card .info {
+  padding: 1rem;
+}
+
+.car-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  margin-top: 2rem;
+}
